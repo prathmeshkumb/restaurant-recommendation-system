@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Recommendation System</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Apply Inter font globally and ensure smooth scrolling */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom styles for image fallback if needed, though Tailwind handles most */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-between min-h-screen bg-gray-50 text-gray-800">
+    <!-- Header Section -->
+    <header class="w-full bg-gray-900 text-white p-6 flex justify-between items-center shadow-lg">
+        <h1 class="text-3xl font-bold">Restaurant Recommendation System</h1>
+        <div class="flex space-x-4">
+            <button onclick="location.href='/'"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">
+                Home
+            </button>
+            <button onclick="location.href='/recommend'"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75">
+                Recommend
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl px-4 py-12 flex-grow">
+        <!-- Text Content Area -->
+        <section class="text-center md:text-left md:w-1/2 p-6 md:pr-12">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-6 leading-tight">
+                Build Recommendation System with Ease!
+            </h2>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                In this age of information overload, people use a variety of strategies to make
+                choices about what to buy, how to spend their leisure time, and even where to go.
+                Recommender systems automate some of these strategies with the goal of providing affordable food items.
+                The aim is to create a content-based recommender system in which when we write a restaurant name, the
+                recommender system will look at the reviews of other restaurants, and the system will recommend us other
+                restaurants with similar reviews and sort them from the highest-rated.
+            </p>
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Test the System</h2>
+            <button onclick="location.href='/recommend'"
+                    class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-lg shadow-xl transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-75">
+                Get Recommendations
+            </button>
+        </section>
+
+        <!-- Image Content Area -->
+        <aside class="w-full md:w-1/2 p-6 md:pl-12 mt-10 md:mt-0">
+            <img src="{{ url_for('static', filename='imageRestro.webp') }}" alt="Delicious Food and Dining Scene"
+                 class="w-full h-auto object-cover rounded-xl shadow-2xl transition-transform duration-500 ease-in-out transform hover:scale-105">
+        </aside>
+    </main>
+</body>
+</html>
